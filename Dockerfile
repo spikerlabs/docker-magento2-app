@@ -1,7 +1,7 @@
 FROM php:7.0.13-fpm
 
 RUN apt-get update && \
-    apt-get install -y libcurl4-gnutls-dev libpng3-dev libmagickwand-dev libmcrypt-dev libxslt1-dev libicu-dev && \
+    apt-get install -y git libcurl4-gnutls-dev libpng3-dev libmagickwand-dev libmcrypt-dev libxslt1-dev libicu-dev && \
     docker-php-ext-configure gd --with-jpeg-dir=/usr/include/ && \
     docker-php-ext-install bcmath curl gd mcrypt pdo pdo_mysql simplexml soap xsl zip intl && \
     echo "\n" | pecl install imagick && \
