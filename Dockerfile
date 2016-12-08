@@ -1,6 +1,6 @@
 FROM php:7.0.13-fpm
 
-WORKDIR /var/www/htdocs
+WORKDIR /var/www
 
 RUN apt-get update && \
     apt-get install -y git libcurl4-gnutls-dev libpng3-dev libmagickwand-dev libmcrypt-dev libxslt1-dev libicu-dev && \
