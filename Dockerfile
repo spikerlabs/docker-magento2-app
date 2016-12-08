@@ -1,7 +1,5 @@
 FROM php:7.0.13-fpm
 
-WORKDIR /var/www
-
 RUN apt-get update && \
     apt-get install -y git libcurl4-gnutls-dev libpng3-dev libmagickwand-dev libmcrypt-dev libxslt1-dev libicu-dev && \
     docker-php-ext-configure gd --with-jpeg-dir=/usr/include/ && \
@@ -11,5 +9,7 @@ RUN apt-get update && \
     curl -sS https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/composer && \
     rm -rf /var/lib/apt/lists/*
+
+WORKDIR /var/www
 
 COPY ./scripts /root/scripts
